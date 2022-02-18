@@ -46,7 +46,7 @@ def generate_launch_description():
     """Launch file which brings up visual odometry node configured for RealSense."""
     realsense_camera_node = Node(
         package='realsense2_camera',
-        node_executable='realsense2_camera_node',
+        executable='realsense2_camera_node',
         namespace='camera',
         parameters=[{
                 'infra_height': 360,
@@ -100,7 +100,7 @@ def generate_launch_description():
     urdf = to_urdf(xacro_path, {'use_nominal_extrinsics' : 'true', 'add_plug' : 'true'})
 
     model_node = Node(
-        node_name='model_node',
+        name='model_node',
         package='robot_state_publisher',
         executable='robot_state_publisher',
         namespace='',
